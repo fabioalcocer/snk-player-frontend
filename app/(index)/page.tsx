@@ -1,24 +1,21 @@
+import CharacterCard from "./components/CharacterCard";
+
 const getTitans = async () => {
-  return fetch('https://snk-player-api.vercel.app/api/characters', {
-    cache: 'no-store'
-  }).then((res) => res.json())
-}
+  return fetch("https://snk-player-api.vercel.app/api/characters", {
+    cache: "no-store",
+  }).then((res) => res.json());
+};
 
 export default async function Home() {
-  const data = await getTitans()
+  const data = await getTitans();
 
   return (
-    <main className="pt-28 pb-14">
-      <ul>
-        {
-          data.data.map((character:any) => (
-            <li key={character._id} className='text-2xl'>
-              <p>{character.name}</p>
-              <img src={character.image} className='w-96' alt="image" />
-            </li>
-          ))
-        }
+    <main className="w-full pt-28 pb-14">
+      <ul className="mt-10 flex flex-wrap justify-center gap-10">
+        {data.data.map((character: any) => (
+          <CharacterCard key={character._id} character={character} />
+        ))}
       </ul>
     </main>
-  )
+  );
 }

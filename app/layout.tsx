@@ -1,10 +1,13 @@
 import "./globals.css";
-import { Inter } from "@next/font/google";
+import { Poppins } from "@next/font/google";
 
 import Footer from "./(index)/components/Footer";
 import Header from "./(index)/components/Header";
 
-const inter = Inter({ subsets: ["latin"] });
+const poppins = Poppins({
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "700"],
+});
 
 export default function RootLayout({
   children,
@@ -15,9 +18,9 @@ export default function RootLayout({
     <html lang="en">
       <head />
       <body className="dark">
-        <div className={`min-h-screen bg-[#141416] ${inter.className}`}>
+        <div className={`min-h-screen bg-[#141416] ${poppins.className}`}>
           <Header />
-          <div className="flex min-h-[96vh] max-w-7xl flex-col rounded-lg px-6 sm:px-8">
+          <div className="mx-auto flex min-h-[96vh] max-w-7xl flex-col rounded-lg px-6 sm:px-8">
             {children}
           </div>
           <Footer />
