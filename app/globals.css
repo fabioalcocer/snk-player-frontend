@@ -24,3 +24,20 @@ a {
   color: inherit;
   text-decoration: none;
 }
+
+.wrapper {
+  margin: auto;
+  margin-top: 3rem;
+  max-inline-size: 1000px;
+}
+
+.player {
+  position: relative;
+}
+
+.player video {
+  inline-size: 100%;
+  aspect-ratio: 16/9;
+  vertical-align: middle;
+  object-fit: cover;
+}

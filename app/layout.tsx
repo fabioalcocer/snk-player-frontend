@@ -18,9 +18,11 @@ export default function RootLayout({
     <html lang="en">
       <head />
       <body className="dark">
-        <div className={`min-h-screen bg-[#141416] ${poppins.className}`}>
+        <div
+          className={`flex min-h-screen flex-col bg-[#141416] ${poppins.className}`}
+        >
           <Header />
-          <div className="mx-auto flex min-h-[96vh] max-w-7xl flex-col rounded-lg px-6 sm:px-8">
+          <div className="mx-auto flex max-w-7xl grow flex-col rounded-lg px-6 pt-28 pb-14 sm:px-8">
             {children}
           </div>
           <Footer />

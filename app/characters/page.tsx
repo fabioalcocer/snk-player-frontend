@@ -1,4 +1,4 @@
-import CharacterCard from "./components/CharacterCard";
+import CharacterCard from "../(index)/components/CharacterCard";
 
 const getTitans = async () => {
   return fetch("https://snk-player-api.vercel.app/api/characters", {
@@ -6,7 +6,7 @@ const getTitans = async () => {
   }).then((res) => res.json());
 };
 
-export default async function Home() {
+async function page() {
   const data = await getTitans();
 
   return (
@@ -19,3 +19,5 @@ export default async function Home() {
     </main>
   );
 }
+
+export default page;
