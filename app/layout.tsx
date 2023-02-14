@@ -1,18 +1,28 @@
-import './globals.css'
+import "./globals.css";
+import { Inter } from "@next/font/google";
+
+import Footer from "./(index)/components/Footer";
+import Header from "./(index)/components/Header";
+
+const inter = Inter({ subsets: ["latin"] });
 
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode
+  children: React.ReactNode;
 }) {
   return (
     <html lang="en">
-      {/*
-        <head /> will contain the components returned by the nearest parent
-        head.tsx. Find out more at https://beta.nextjs.org/docs/api-reference/file-conventions/head
-      */}
       <head />
-      <body>{children}</body>
+      <body className="dark">
+        <div className={`min-h-screen bg-[#141416] ${inter.className}`}>
+          <Header />
+          <div className="flex min-h-[96vh] max-w-7xl flex-col rounded-lg px-6 sm:px-8">
+            {children}
+          </div>
+          <Footer />
+        </div>
+      </body>
     </html>
-  )
+  );
 }
