@@ -1,5 +1,11 @@
+import Loader from "./components/Loader";
+
 function loading() {
-  return <div className="text-3xl text-teal-500">loading</div>;
+  return (
+    <div className="grid place-content-center mt-48">
+      <Loader />
+    </div>
+  )
 }
 
 export default loading;

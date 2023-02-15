@@ -10,8 +10,8 @@ async function PageHumans() {
   const data = await getHumans();
 
   return (
-    <main className="w-full">
-      <ul className="mt-10 flex flex-wrap justify-center gap-10">
+    <main className="grid w-full">
+      <ul className="mt-10 flex flex-wrap justify-center gap-12 gap-y-14">
         {data.data.map((character: any) => (
           <HumanCard key={character._id} character={character} />
         ))}
