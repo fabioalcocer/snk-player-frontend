@@ -13,15 +13,15 @@ type Props = {
 
 function CharacterCard({ character }: Props) {
   return (
-    <li className="relative z-10 w-72 cursor-pointer rounded-lg bg-zinc-900 duration-300 before:absolute before:top-5 before:-left-3 before:right-0 before:-z-10 before:h-full before:w-full before:scale-[0.89] before:bg-[#f7ba2b] before:bg-card-background before:blur-lg before:transition-opacity before:duration-500 hover:-translate-y-2 hover:translate-x-1 hover:before:opacity-0">
+    <li className="card relative z-10 w-80 cursor-pointer rounded-lg duration-300 after:absolute after:top-6 after:-left-4 after:right-0 after:-z-10 after:h-full after:w-full after:scale-[0.92] after:bg-[#f7ba2b] after:bg-card-background after:blur-lg after:opacity-0 after:transition-opacity after:duration-500 hover:-translate-y-2 hover:translate-x-1 hover:after:opacity-100">
       <Link href='/characters/[id]' as={`/characters/${character._id}`}>
-        <div className="flex h-full w-full flex-col gap-2 overflow-hidden rounded-lg bg-zinc-900">
+        <div className="flex h-full w-full flex-col gap-2 overflow-hidden rounded-lg bg-zinc-800">
           <img
             src={character.image}
-            className="max-h-72 min-h-[288px] w-full object-cover"
+            className="max-h-80 min-h-[320px] w-full object-cover"
             alt="image"
           />
-          <div className="flex flex-col p-3 pb-6 text-zinc-100">
+          <div className="flex flex-col p-3 px-5 pb-6 text-zinc-100">
             <h2 className="text-[25px] font-medium">{character.name}</h2>
             <p
               className={`font-medium

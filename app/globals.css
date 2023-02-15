@@ -3,9 +3,9 @@
 @tailwind utilities;
 
 :root {
-  --font-mono: ui-monospace, Menlo, Monaco, 'Cascadia Mono', 'Segoe UI Mono',
-    'Roboto Mono', 'Oxygen Mono', 'Ubuntu Monospace', 'Source Code Pro',
-    'Fira Mono', 'Droid Sans Mono', 'Courier New', monospace;
+  --font-mono: ui-monospace, Menlo, Monaco, "Cascadia Mono", "Segoe UI Mono",
+    "Roboto Mono", "Oxygen Mono", "Ubuntu Monospace", "Source Code Pro",
+    "Fira Mono", "Droid Sans Mono", "Courier New", monospace;
 }
 
 * {
@@ -40,4 +40,45 @@ a {
   aspect-ratio: 16/9;
   vertical-align: middle;
   object-fit: cover;
+}
+
+@property --rotate {
+  syntax: "<angle>";
+  initial-value: 180deg;
+  inherits: false;
+}
+
+
+.card::before {
+  content: "";
+  width: 103%;
+  height: 102%;
+  border-radius: 8px;
+  background-image: linear-gradient(
+    var(--rotate),
+    #f8aa0e,
+    #feed52 43%,
+    #790000
+  );
+  position: absolute;
+  z-index: -1;
+  top: -1%;
+  left: -4px;
+  animation: spin 5s linear infinite;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.card:hover::before {
+  opacity: 1;
+  transition: opacity 0.5s ease-in-out;
+}
+
+@keyframes spin {
+  0% {
+    --rotate: 0deg;
+  }
+  100% {
+    --rotate: 360deg;
+  }
 }

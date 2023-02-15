@@ -11,7 +11,12 @@ export default async function Home() {
 
   return (
     <main className="w-full">
-      <ul className="mt-10 flex flex-wrap justify-center gap-10">
+      <nav className="flex bg-white">
+        <button>Soldiers</button>
+        <button>Titans</button>
+      </nav>
+
+      <ul className="mt-10 flex flex-wrap justify-center gap-12 gap-y-14">
         {data.data.map((character: any) => (
           <CharacterCard key={character._id} character={character} />
         ))}
