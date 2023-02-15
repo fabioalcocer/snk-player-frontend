@@ -1,17 +1,17 @@
-import HumanCard from "./components/HumanCard";
+import HumanCard from "../(index)/components/HumanCard";
 
-const getTitans = async () => {
+const getHumans = async () => {
   return fetch("https://snk-player-api.vercel.app/api/characters", {
     cache: "no-store",
   }).then((res) => res.json());
 };
 
-export default async function Home() {
-  const data = await getTitans();
+async function PageHumans() {
+  const data = await getHumans();
 
   return (
-    <main className="grid w-full">
-      <ul className="mt-10 flex flex-wrap justify-center gap-12 gap-y-14">
+    <main className="w-full">
+      <ul className="mt-10 flex flex-wrap justify-center gap-10">
         {data.data.map((character: any) => (
           <HumanCard key={character._id} character={character} />
         ))}
@@ -19,3 +19,5 @@ export default async function Home() {
     </main>
   );
 }
+
+export default PageHumans;

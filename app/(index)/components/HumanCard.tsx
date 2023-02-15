@@ -1,6 +1,6 @@
+/* eslint-disable @next/next/no-img-element */
 import Link from "next/link";
 
-/* eslint-disable @next/next/no-img-element */
 type Props = {
   character: {
     _id: number
@@ -11,10 +11,10 @@ type Props = {
   };
 };
 
-function CharacterCard({ character }: Props) {
+function HumanCard({ character }: Props) {
   return (
     <li className="card relative z-10 w-80 cursor-pointer rounded-lg duration-300 after:absolute after:top-6 after:-left-4 after:right-0 after:-z-10 after:h-full after:w-full after:scale-[0.92] after:bg-[#f7ba2b] after:bg-card-background after:blur-lg after:opacity-0 after:transition-opacity after:duration-500 hover:-translate-y-2 hover:translate-x-1 hover:after:opacity-100">
-      <Link href='/characters/[id]' as={`/characters/${character._id}`}>
+      <Link href='/humans/[id]' as={`/humans/${character._id}`}>
         <div className="flex h-full w-full flex-col gap-2 overflow-hidden rounded-lg bg-zinc-800">
           <img
             src={character.image}
@@ -44,4 +44,4 @@ function CharacterCard({ character }: Props) {
   );
 }
 
-export default CharacterCard;
+export default HumanCard;

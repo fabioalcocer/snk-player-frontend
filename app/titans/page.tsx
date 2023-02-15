@@ -1,23 +1,23 @@
-import CharacterCard from "../(index)/components/CharacterCard";
+import TitanCard from "../(index)/components/TitanCard";
 
 const getTitans = async () => {
-  return fetch("https://snk-player-api.vercel.app/api/characters", {
+  return fetch("https://snk-player-api.vercel.app/api/titans", {
     cache: "no-store",
   }).then((res) => res.json());
 };
 
-async function page() {
+async function PageTitans() {
   const data = await getTitans();
 
   return (
     <main className="w-full">
       <ul className="mt-10 flex flex-wrap justify-center gap-10">
         {data.data.map((character: any) => (
-          <CharacterCard key={character._id} character={character} />
+          <TitanCard key={character._id} titan={character} />
         ))}
       </ul>
     </main>
   );
 }
 
-export default page;
+export default PageTitans;
