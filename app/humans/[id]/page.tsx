@@ -1,4 +1,4 @@
-import VideoPlayer from "@/app/(index)/components/VideoPlayer";
+import PlayerContainer from "@/app/(index)/components/PlayerContainer";
 
 type Props = {
   params: any;
@@ -15,13 +15,7 @@ async function PageCharacterId({ params }: Props) {
   const { data } = await fetchSingleCharacter(id);
   const character = data;
 
-  return (
-    <div className="text-xl text-white">
-      <h1>{character.name}</h1>
-      <p className="">Este es el personaje {character.description}</p>
-      <VideoPlayer character={character} />
-    </div>
-  );
+  return <PlayerContainer character={character} />;
 }
 
 export default PageCharacterId;

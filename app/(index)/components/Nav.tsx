@@ -3,15 +3,6 @@ import Link from "next/link";
 
 function Nav() {
   return (
-    <section className="flex flex-col justify-center gap-2 items-center mt-5">
-      <h1 className="bg-gradient-to-r from-yellow-500 to-red-600 bg-clip-text text-right text-3xl sm:text-5xl font-bold text-transparent inline-block sm:text-left">
-        SNK Moments
-      </h1>
-      <p className="mx-auto max-w-2xl mt-3 mb-7 text-center text-base sm:text-xl text-zinc-200">
-        Encuentra y disfruta de los momentos más emocionantes y significativos
-        de los personajes de Shingeki no Kyojin. Puedes seleccionar un personaje
-        específico y ver su momento destacado durante toda la serie.
-      </p>
       <div className="relative z-20 mx-auto mt-10 mb-5 inline-flex gap-8 opacity-90">
         <div className="group">
           <img
@@ -38,7 +29,6 @@ function Nav() {
           </Link>
         </div>
       </div>
-    </section>
   );
 }
 

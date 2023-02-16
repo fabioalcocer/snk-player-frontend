@@ -1,4 +1,4 @@
-import VideoPlayer from "@/app/(index)/components/VideoPlayer";
+import PlayerContainer from "@/app/(index)/components/PlayerContainer";
 
 type Props = {
   params: any;
@@ -15,13 +15,7 @@ async function PageTitanId({ params }: Props) {
   const { data } = await fetchSingleTitan(id);
   const titan = data;
 
-  return (
-    <div className="text-xl text-white">
-      <h1>{titan.name}</h1>
-      <p className="">{titan.description}</p>
-      <VideoPlayer character={titan} />
-    </div>
-  );
+  return <PlayerContainer character={titan} />;
 }
 
 export default PageTitanId;

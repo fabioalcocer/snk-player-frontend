@@ -1,3 +1,4 @@
+import Nav from "../(index)/components/Nav";
 import TitanCard from "../(index)/components/TitanCard";
 
 const getTitans = async () => {
@@ -10,13 +11,16 @@ async function PageTitans() {
   const data = await getTitans();
 
   return (
+    <>
+      <Nav />
     <section className="w-full">
       <ul className="mt-10 flex flex-wrap justify-center gap-10">
         {data.data.map((character: any) => (
           <TitanCard key={character._id} titan={character} />
-        ))}
+          ))}
       </ul>
     </section>
+          </>
   );
 }
 
