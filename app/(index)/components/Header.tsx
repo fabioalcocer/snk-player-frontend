@@ -1,6 +1,6 @@
 import Image from "next/image";
 import logo from "../assets/logo-snk.png";
-import AudioBtn from "./AudioBtn";
+import AudioPlayer from './AudioPlayer'
 
 function Header() {
   return (
@@ -10,7 +10,7 @@ function Header() {
           <Image className="w-full object-cover" fill src={logo} alt="" />
         </div>
         <div className="flex items-center gap-4">
-          <AudioBtn />
+          <AudioPlayer />
           <h1 className="hidden bg-gradient-to-r from-yellow-500 to-red-600 bg-clip-text text-right text-2xl font-bold text-transparent sm:inline-block sm:text-left">
             SNK Moments
           </h1>

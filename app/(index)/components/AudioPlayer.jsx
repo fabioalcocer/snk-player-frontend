@@ -2,16 +2,18 @@
 import { useState } from "react";
 import { TbMusic, TbMusicOff } from "react-icons/tb";
 
-const url =
+const URL =
   "https://res.cloudinary.com/daobmfotr/video/upload/v1676518022/anime-imgs/TKT_ozo7id.mp3";
 
-function AudioBtn() {
+function AudioPlayer() {
   const [controlPlay, setControlPlay] = useState(true);
-  const [song, setSong] = useState(new Audio(url));
+  const [audio, setAudio] = useState(
+    typeof Audio !== "undefined" && new Audio(URL)
+  );
 
   const handlePlay = () => {
-    song.volume = 0.1;
-    song.paused ? song.play() : song.pause();
+    audio.volume = 0.1;
+    audio.paused ? audio.play() : audio.pause();
     setControlPlay(!controlPlay);
   };
 
@@ -29,4 +31,4 @@ function AudioBtn() {
   );
 }
 
-export default AudioBtn;
+export default AudioPlayer;
