@@ -2,7 +2,6 @@ import VideoPlayer from "@/app/(index)/components/VideoPlayer";
 
 type Props = {
   params: any;
-  id: number;
 };
 
 const fetchSingleCharacter = async (id: number) => {

@@ -2,7 +2,6 @@ import VideoPlayer from "@/app/(index)/components/VideoPlayer";
 
 type Props = {
   params: any;
-  id: number;
 };
 
 const fetchSingleTitan = async (id: number) => {
