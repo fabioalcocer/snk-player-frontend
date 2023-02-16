@@ -23,10 +23,10 @@ export default function RootLayout({
           className={`flex min-h-screen flex-col bg-[#141416] ${poppins.className}`}
         >
           <Header />
-          <div className="mx-auto flex max-w-7xl grow flex-col rounded-lg px-6 pt-28 pb-14 sm:px-8">
+          <main className="mx-auto flex max-w-7xl grow flex-col rounded-lg px-6 pt-28 pb-14 sm:px-8">
             <Nav />
             {children}
-          </div>
+          </main>
           <Footer />
         </div>
       </body>
