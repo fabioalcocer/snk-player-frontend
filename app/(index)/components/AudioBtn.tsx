@@ -1,23 +1,30 @@
 "use client";
 import { useState } from "react";
-import AudioPlayer from "react-audio-player"; // @ts-ignore
+import { TbMusic, TbMusicOff } from "react-icons/tb";
 
-const ReactAudioPlayer: any = AudioPlayer.default // @ts-ignore
-  ? AudioPlayer.default // @ts-ignore
-  : AudioPlayer;
+const url =
+  "https://res.cloudinary.com/daobmfotr/video/upload/v1676518022/anime-imgs/TKT_ozo7id.mp3";
 
 function AudioBtn() {
-  const [isMuted, setIsMuted] = useState(false);
+  const [controlPlay, setControlPlay] = useState(true);
+  const [song, setSong] = useState(new Audio(url));
+
+  const handlePlay = () => {
+    song.volume = 0.1;
+    song.paused ? song.play() : song.pause();
+    setControlPlay(!controlPlay);
+  };
+
   return (
-    <button className="bg-white p-2" onClick={() => setIsMuted(!isMuted)}>
-      Play
-      <ReactAudioPlayer
-        src="https://res.cloudinary.com/daobmfotr/video/upload/v1676513293/anime-imgs/Attack_On_Titan_-_Vogel_im_K%C3%A4fig_c9xjvx.mp3"
-        muted={isMuted}
-        autoPlay
-        volume={0.1}
-        loop
-      />
+    <button
+      className="rounded-full bg-gradient-to-r from-yellow-500 to-red-600 p-2 transition-colors duration-500 hover:bg-orange-500"
+      onClick={handlePlay}
+    >
+      {controlPlay ? (
+        <TbMusicOff className="text-xl text-zinc-100" />
+      ) : (
+        <TbMusic className="text-xl text-zinc-100" />
+      )}
     </button>
   );
 }
