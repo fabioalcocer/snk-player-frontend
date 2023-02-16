@@ -1,8 +1,6 @@
 import HumanCard from "./components/HumanCard";
 
 const getHumans = async () => {
-  await new Promise((resolve) => setTimeout(resolve, 2000))
-
   return fetch("https://snk-player-api.vercel.app/api/characters", {
     cache: "no-store",
   }).then((res) => res.json());

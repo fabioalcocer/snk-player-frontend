@@ -6,8 +6,6 @@ type Props = {
 };
 
 const fetchSingleCharacter = async (id: number) => {
-  await new Promise((resolve) => setTimeout(resolve, 2000))
-
   return fetch(`https://snk-player-api.vercel.app/api/characters/${id}`, {
     cache: "no-store",
   }).then((res) => res.json());

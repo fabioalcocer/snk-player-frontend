@@ -6,8 +6,6 @@ type Props = {
 };
 
 const fetchSingleTitan = async (id: number) => {
-  await new Promise((resolve) => setTimeout(resolve, 2000))
-
   return fetch(`https://snk-player-api.vercel.app/api/titans/${id}`, {
     cache: "no-store",
   }).then((res) => res.json());
