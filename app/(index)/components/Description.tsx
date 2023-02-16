@@ -1,6 +1,6 @@
 function Description() {
   return (
-    <div className="mt-5 flex flex-col items-center justify-center gap-2">
+    <div className="mt-3 flex flex-col items-center justify-center gap-2">
       <h1 className="inline-block bg-gradient-to-r from-yellow-500 to-red-600 bg-clip-text text-right text-3xl font-bold text-transparent sm:text-left sm:text-5xl">
         SNK Moments
       </h1>
