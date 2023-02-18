@@ -3,7 +3,7 @@ import Link from "next/link";
 
 type Props = {
   character: {
-    _id: number
+    _id: number;
     image: string;
     name: string;
     status: string;
@@ -13,9 +13,17 @@ type Props = {
 
 function HumanCard({ character }: Props) {
   return (
-    <li className="card relative z-10 w-80 cursor-pointer rounded-lg duration-300 after:absolute after:top-6 after:-left-4 after:right-0 after:-z-10 after:h-full after:w-full after:scale-[0.92] after:bg-[#f7ba2b] after:bg-card-background after:blur-lg after:opacity-0 after:transition-opacity after:duration-500 hover:-translate-y-2 hover:translate-x-1 hover:after:opacity-100">
-      <Link href='/humans/[id]' as={`/humans/${character._id}`}>
-        <div className="flex h-full w-full flex-col gap-2 overflow-hidden rounded-lg bg-zinc-800">
+    <li
+      className={`card relative z-10 w-80 cursor-pointer border-b-4
+    ${
+      character.status === "Alive"
+        ? "border-emerald-500/80"
+        : "border-red-500/80"
+    }
+    rounded-lg duration-300 after:absolute after:top-6 after:-left-4 after:right-0 after:-z-10 after:h-full after:w-full after:scale-[0.92] after:bg-[#f7ba2b] after:bg-card-background after:opacity-0 after:blur-lg after:transition-opacity after:duration-500 hover:-translate-y-2 hover:translate-x-1 hover:after:opacity-100`}
+    >
+      <Link href="/humans/[id]" as={`/humans/${character._id}`}>
+        <div className="flex h-full w-full flex-col gap-2 overflow-hidden rounded-lg bg-zinc-900">
           <img
             src={character.image}
             className="max-h-80 min-h-[320px] w-full object-cover"

@@ -10,7 +10,7 @@ function Nav() {
             src="https://res.cloudinary.com/daobmfotr/image/upload/v1676436644/anime-imgs/Captain-Levi-Ackerman-Transparent-PNG_bkwoua.png"
             alt="levi ackerman png"
           />
-          <Link href="/humans">
+          <Link href="/">
             <button className="relative rounded-md bg-zinc-700/80 py-3 px-6 font-bold text-zinc-100 transition-all duration-300 hover:scale-105">
               Humans
             </button>

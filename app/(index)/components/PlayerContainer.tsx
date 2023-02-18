@@ -15,9 +15,9 @@ type Props = {
 function PlayerContainer({ character }: Props) {
   return (
     <div className="text-xl text-white">
-      <div className="mt-7 flex items-start justify-between flex-col gap-5 sm:flex-row sm:gap-0">
+      <div className="mt-7 flex flex-col items-start justify-between gap-5 sm:flex-row sm:gap-0">
         <div className="max-w-lg">
-          <h1 className="mb-2 text-4xl font-semibold text-green-700">
+          <h1 className="mb-2 pb-2 inline-block bg-gradient-to-r from-yellow-500 to-red-600 bg-clip-text text-4xl font-semibold text-transparent sm:text-5xl">
             {character.name}
           </h1>
           <p className="text-base text-zinc-200">{character.description}</p>
