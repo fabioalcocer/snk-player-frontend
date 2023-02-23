@@ -13,7 +13,7 @@ type Props = {
 
 function TitanCard({ titan }: Props) {
   return (
-    <li className="card relative z-10 w-80 cursor-pointer rounded-lg duration-300 after:absolute after:top-6 after:-left-4 after:right-0 after:-z-10 after:h-full after:w-full after:scale-[0.92] after:bg-[#f7ba2b] after:bg-card-background after:opacity-0 after:blur-lg after:transition-opacity after:duration-500 hover:-translate-y-2 hover:translate-x-1 hover:after:opacity-100">
+    <li className="card relative z-10 w-80 border-b-4 border-red-500/80 cursor-pointer rounded-lg duration-300 after:absolute after:top-6 after:-left-4 after:right-0 after:-z-10 after:h-full after:w-full after:scale-[0.92] after:bg-[#f7ba2b] after:bg-card-background after:opacity-0 after:blur-lg after:transition-opacity after:duration-500 hover:-translate-y-2 hover:translate-x-1 hover:after:opacity-100">
       <Link href="/titans/[id]" as={`/titans/${titan._id}`}>
         <div className="flex h-full w-full flex-col gap-2 overflow-hidden rounded-lg bg-zinc-800">
           <img
