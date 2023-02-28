@@ -4,7 +4,7 @@ import { BsGithub, BsLinkedin, BsTwitter } from "react-icons/bs";
 function Footer() {
   return (
     <footer className="flex w-full">
-      <div className="mx-auto flex w-full max-w-7xl flex-col items-center justify-between gap-4 border-t border-zinc-500/30 py-5 px-10 sm:flex-row sm:gap-0">
+      <div className="mx-auto flex w-full max-w-7xl flex-col items-center justify-between gap-4 border-t border-zinc-500/30 py-6 px-10 sm:flex-row sm:gap-0">
         <div className="flex gap-6 text-zinc-400">
           <Link
             href="https://twitter.com/fabioalcocer17"

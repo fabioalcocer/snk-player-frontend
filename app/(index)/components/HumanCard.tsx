@@ -14,7 +14,7 @@ type Props = {
 function HumanCard({ character }: Props) {
   return (
     <li
-      className={`card relative z-10 w-80 cursor-pointer border-b-4
+      className={`card group relative z-10 w-80 cursor-pointer border-b-4
     ${
       character.status === "Alive"
         ? "border-emerald-500/80"
@@ -26,10 +26,10 @@ function HumanCard({ character }: Props) {
         <div className="flex h-full w-full flex-col gap-2 overflow-hidden rounded-lg bg-zinc-900">
           <img
             src={character.image}
-            className="max-h-80 min-h-[320px] w-full object-cover"
+            className="max-h-80 min-h-[320px] w-full object-cover group-hover:min-h-full transition-all duration-500"
             alt="image"
           />
-          <div className="flex flex-col p-3 px-5 pb-6 text-zinc-100">
+          <div className="flex flex-col p-3 px-5 pb-6 text-zinc-100 group-hover:opacity-0 transition-all duration-300">
             <h2 className="text-[25px] font-medium">{character.name}</h2>
             <p
               className={`font-medium
